@@ -9,7 +9,6 @@
 public class test {
     public static void main(String[] args) {
         int p = 8;
-        String j = "666";
 
         System.out.println(p);
     }
