@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 /**
  * ClassName:test
  * Description:
@@ -10,7 +8,7 @@ import java.util.Arrays;
  */
 public class test {
     public static void main(String[] args) {
-        int[] i = new int[]{1,2,34,4};
-        System.out.println(Arrays.toString(i));
+        int p = 8;
+        System.out.println(p);
     }
 }
