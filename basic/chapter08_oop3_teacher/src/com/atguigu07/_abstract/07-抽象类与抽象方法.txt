@@ -28,7 +28,7 @@ class Rectangle extends GeometricObject{
 }
 
 
-举例2：Account-SavingAccount-CheckAcount
+举例2：Account-SavingAccount-CheckAccount
 
 abstract class Account{
 

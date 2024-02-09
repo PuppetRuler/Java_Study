@@ -90,7 +90,7 @@ class Bank{
     //实现线程安全的方式3:相较于方式1和方式2来讲，效率更高。为了避免出现指令重排，需要将instance声明为volatile
     public static Bank getInstance(){
         if(instance == null) {
-            synchronized (Bank.class) {
+            synchronized (Bank.class) { // 线程1和线程2可能都卡在这个位置 所以要双重if判断
                 if (instance == null) {
 
                     try {

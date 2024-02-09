@@ -18,7 +18,7 @@ public class WrapperTest {
      */
     //包装类 ---> 基本数据类型：调用包装类的xxxValue()
     /*
-    * jdk5.0新特性：自动装箱、自动拆箱。
+    * jdk5.0新特性：自动装箱、自动拆箱。              语法糖
     * */
     @Test
     public void test4(){

@@ -22,14 +22,13 @@ public class ScoreTest {
         int maxScore = 0; //记录最高分
 
 
-
         //2. 从键盘获取多个学生成绩，存放到v中 （以负数代表输入结束）
-        while(true){ //for(;;)
+        while (true) { //for(;;)
 
             System.out.print("请输入学生成绩（以负数代表输入结束）：");
             int intScore = scanner.nextInt();
 
-            if(intScore < 0){
+            if (intScore < 0) {
                 break;
             }
 
@@ -42,14 +41,14 @@ public class ScoreTest {
             v.addElement(intScore);
 
             //3. 获取学生成绩的最大值
-            if(maxScore < intScore){
+            if (maxScore < intScore) {
                 maxScore = intScore;
             }
         }
 
         System.out.println("最高分：" + maxScore);
         //4. 依次获取v中的每个学生成绩，与最高分进行比较，获取学生等级，并输出
-        for(int i = 0;i < v.size();i++){
+        for (int i = 0; i < v.size(); i++) {
             Object objScore = v.elementAt(i);
             //方式1：
 //            Integer integerScore = (Integer) objScore;
@@ -59,17 +58,17 @@ public class ScoreTest {
             //方式2：自动拆箱
             int score = (Integer) objScore;
             char grade;
-            if(maxScore - score <= 10){
+            if (maxScore - score <= 10) {
                 grade = 'A';
-            }else if(maxScore - score <= 20){
+            } else if (maxScore - score <= 20) {
                 grade = 'B';
-            }else if(maxScore - score <= 30){
+            } else if (maxScore - score <= 30) {
                 grade = 'C';
-            }else{
+            } else {
                 grade = 'D';
             }
 
-            System.out.println("student " + i +" score is " + score + " grade is " + grade);
+            System.out.println("student " + i + " score is " + score + " grade is " + grade);
 
         }
 
