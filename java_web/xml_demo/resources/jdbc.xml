@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+1 根标签只能有一个
+2 第一行永远都是<？xml version="1.g"encoding="UTF-8"?>前面不可以有空行
+3 xml是有约束   约束用于限定xml内部能编写的内容
+-->
+<jdbc>
+    <dev id="001">
+        <username>root</username>
+        <password>root</password>
+        <driver>com.mysql.jdbc.Driver</driver>
+        <url>jdbc:mysql://localhost:3306/atguigu</url>
+    </dev>
+    <test id="002">
+        <username>zhangsan</username>
+        <password>123456</password>
+        <driver>com.mysql.jdbc.Driver</driver>
+        <url>jdbc:mysql://localhost:3306/atguigu</url>
+    </test>
+    <prod id="003">
+        <username>lisi</username>
+        <password>654321</password>
+        <driver>com.mysql.jdbc.Driver</driver>
+        <url>jdbc:mysql://localhost:3306/atguigu</url>
+    </prod>
+</jdbc>
