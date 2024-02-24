@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.maven</groupId>
+    <artifactId>maven_web</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
+
+    <!--<dependencies>-->
+    <!--    <dependency>-->
+    <!--        <groupId>com.maven</groupId>-->
+    <!--        <artifactId>maven_java</artifactId>-->
+    <!--        <version>1.0</version>-->
+    <!--        &lt;!&ndash;手动排除依赖&ndash;&gt;-->
+    <!--        <exclusions>-->
+    <!--            <exclusion>-->
+    <!--                <groupId>com.alibaba</groupId>-->
+    <!--                <artifactId>druid</artifactId>-->
+    <!--            </exclusion>-->
+    <!--        </exclusions>-->
+    <!--    </dependency>-->
+    <!--</dependencies>-->
+
+    <!--引用别人部署的 jar 包-->
+    <repositories>
+        <repository>
+            <id>nexus-mine</id>
+            <name>nexus-mine</name>
+            <url>http://localhost:8081/repository/maven-snapshots/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+    </repositories>
+
+    <build>
+        <!-- 自定义打包名称 -->
+        <finalName>maven_web-1.0.war</finalName>
+        <!-- jdk17 和 war包版本插件不匹配 -->
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.2.2</version>
+            </plugin>
+            <!-- tomcat插件 -->
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.2</version>
+                <configuration>
+                    <port>8090</port>
+                    <path>/</path>
+                    <uriEncoding>UTF-8</uriEncoding>
+                    <server>tomcat7</server>
+                </configuration>
+            </plugin>
+        </plugins>
+        <!--设置要打包的资源位置-->
+        <resources>
+            <resource>
+                <!--设置资源所在目录-->
+                <directory>src/main/java</directory>
+                <includes>
+                    <!--设置包含的资源类型-->
+                    <include>**/*.xml</include>
+                </includes>
+            </resource>
+        </resources>
+    </build>
+
+</project>
