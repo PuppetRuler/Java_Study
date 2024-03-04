@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mybatis.mapper.OrderMapper">
+
+    <!--自定义映射关系，定义嵌套对象的映射关系-->
+    <resultMap id="orderMap" type="order">
+        <!--第一层属性 order对象-->
+        <!--order的主键 id标签-->
+        <id column="order_id" property="customerId"></id>
+        <!--普通列-->
+        <result column="order_name" property="orderName"></result>
+        <result column="customer_id" property="customerId"></result>
+        <!--
+            对象属性赋值
+            property 对象属性名
+            javaType 对象类型
+        -->
+        <association property="customer" javaType="customer">
+            <id column="customer_id" property="customerId"></id>
+            <result column="customer_name" property="customerName"></result>
+        </association>
+    </resultMap>
+
+    <select id="queryOrderById" resultMap="orderMap">
+        SELECT *
+        FROM t_order tor
+                 JOIN t_customer tcu
+                      ON tor.customer_id = tcu.customer_id
+        WHERE tor.order_id = #{id}
+    </select>
+</mapper>

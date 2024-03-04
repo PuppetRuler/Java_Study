@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="demo07-scope:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/demo07_scope_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="demo07-scope/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="demo07-scope" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
